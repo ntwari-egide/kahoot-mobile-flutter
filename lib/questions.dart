@@ -1,6 +1,7 @@
 // questionsWidget screen
 
 import 'package:flutter/material.dart';
+import 'package:quiz/answers.dart';
 
 class QuestionsWidget extends StatefulWidget {
   const QuestionsWidget({super.key});
@@ -27,34 +28,10 @@ class _QuestionsWidgetState extends State<QuestionsWidget> {
           const SizedBox(
             height: 50,
           ),
-          
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(51, 255, 255, 255),
-              padding:
-                  const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-            ),
-            onPressed: () {},
-            child: const Text("Developing Mobile Apps", style: TextStyle(color: Colors.white, fontSize: 19),),
-          ),
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(51, 255, 255, 255),
-              padding:
-                  const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-            ),
-            onPressed: () {},
-            child: const Text("Developing Mobile Apps", style: TextStyle(color: Colors.white, fontSize: 19),),
-          ),
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(51, 255, 255, 255),
-              padding:
-                  const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-            ),
-            onPressed: () {},
-            child: const Text("Developing Mobile Apps", style: TextStyle(color: Colors.white, fontSize: 19),),
-          ),
+          AnswersWidget(answersText: "To Develop Native Apps", onTap: (){}),
+          AnswersWidget(answersText: "To Develop Mobile Apps", onTap: (){}),
+          AnswersWidget(answersText: "To Develop Web Apps", onTap: (){}),
+          AnswersWidget(answersText: "To Develop Cross Platform Apps", onTap: (){})
         ],
       ),
     );

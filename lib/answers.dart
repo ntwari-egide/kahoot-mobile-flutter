@@ -16,9 +16,10 @@ class AnswersWidget extends StatelessWidget {
               backgroundColor: const Color.fromARGB(51, 255, 255, 255),
               padding:
                   const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
             ),
             onPressed: () {},
-            child: const Text("Developing Mobile Apps", style: TextStyle(color: Colors.white, fontSize: 19),),
+            child: Text(answersText, style: const TextStyle(color: Colors.white, fontSize: 19),),
           );
   }
 }
