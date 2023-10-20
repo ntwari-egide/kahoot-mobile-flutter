@@ -16,7 +16,7 @@ class StartScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Opacity(
-            opacity: 0.8,
+            opacity: 0.7,
             child: Image.asset(
               'assets/images/quiz-logo.png',
               width: 300,
@@ -26,7 +26,7 @@ class StartScreen extends StatelessWidget {
             height: 80,
           ), // works as grid diver
           const Text(
-            "Pass The Quiz to win Price!",
+            "Pass The Quiz To Win Price!",
             style: TextStyle(
                 color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
           ),
