@@ -1,6 +1,7 @@
 // class for the quiz
 
 import 'package:flutter/material.dart';
+import 'package:quiz/questions.dart';
 import 'package:quiz/start_screen.dart';
 
 class QuizWidget extends StatefulWidget {
@@ -14,6 +15,23 @@ class QuizWidget extends StatefulWidget {
 }
 
 class _QuizWidgetState extends State<QuizWidget> {
+
+  // we need to be able to switch from one screen to another
+  Widget? activeScreen;
+
+
+  // executes on first time, as useEffect react
+  @override
+  void initState() {
+    activeScreen = StartScreen(switchScreen);
+    super.initState();
+  }
+
+  void switchScreen() {
+    setState(() {
+      activeScreen = const QuestionsWidget();
+    });
+  }
 
   @override
   Widget build(context) {
@@ -30,7 +48,7 @@ class _QuizWidgetState extends State<QuizWidget> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: const StartScreen(),
+          child: activeScreen,
         ),
       ),
     );
