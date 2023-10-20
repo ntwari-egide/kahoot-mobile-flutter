@@ -5,7 +5,6 @@ import 'package:quiz/questions.dart';
 import 'package:quiz/start_screen.dart';
 
 class QuizWidget extends StatefulWidget {
-
   const QuizWidget({super.key});
 
   @override
@@ -15,26 +14,30 @@ class QuizWidget extends StatefulWidget {
 }
 
 class _QuizWidgetState extends State<QuizWidget> {
-
   // we need to be able to switch from one screen to another
-  Widget? activeScreen;
-
+  var activeScreen = 'start-screen';
 
   // executes on first time, as useEffect react
-  @override
-  void initState() {
-    activeScreen = StartScreen(switchScreen);
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   activeScreen = StartScreen(switchScreen);
+  //   super.initState();
+  // }
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsWidget();
+      activeScreen = 'question-screen';
     });
   }
 
   @override
   Widget build(context) {
+
+  Widget screenWidget = StartScreen(switchScreen);
+
+  // using if conditions
+  if ( activeScreen == 'question-screen') screenWidget = const QuestionsWidget();
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -48,7 +51,7 @@ class _QuizWidgetState extends State<QuizWidget> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen,
+          child: screenWidget,
         ),
       ),
     );
