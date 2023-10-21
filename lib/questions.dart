@@ -15,10 +15,21 @@ class QuestionsWidget extends StatefulWidget {
 }
 
 class _QuestionsWidgetState extends State<QuestionsWidget> {
-  QuizQuestion question = questions[0];
+
+  //current question state
+  var currentQuestionIndex = 0;
+
+  void onTapNext() {
+    print('writing ....');
+    setState(() {
+      currentQuestionIndex++;
+    });
+  }
 
   @override
   Widget build(context) {
+   final question = questions[currentQuestionIndex];
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -41,7 +52,7 @@ class _QuestionsWidgetState extends State<QuestionsWidget> {
             ...question.getShuffledAnswers().map((answers) {
               return Container(
                 margin: const EdgeInsets.only(top: 10),
-                child: AnswersWidget(answersText: answers, onTap: () {}),
+                child: AnswersWidget(answersText: answers, onTap: onTapNext),
               );
             }),
           ],

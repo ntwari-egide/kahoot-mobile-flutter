@@ -18,7 +18,7 @@ class AnswersWidget extends StatelessWidget {
                   const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
             ),
-            onPressed: () {},
+            onPressed: onTap,
             child: Text(answersText, style: const TextStyle(color: Colors.white, fontSize: 19),),
           );
   }
