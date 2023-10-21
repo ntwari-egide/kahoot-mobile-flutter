@@ -15,7 +15,7 @@ class AnswersWidget extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               backgroundColor: const Color.fromARGB(51, 255, 255, 255),
               padding:
-                  const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                  const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
             ),
             onPressed: () {},
