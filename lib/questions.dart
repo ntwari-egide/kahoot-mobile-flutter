@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz/answers.dart';
 import 'package:quiz/data/questions.dart';
-import 'package:quiz/model/quiz_question.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsWidget extends StatefulWidget {
   const QuestionsWidget({

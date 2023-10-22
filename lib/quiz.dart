@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/data/questions.dart';
 import 'package:quiz/questions.dart';
+import 'package:quiz/results.dart';
 import 'package:quiz/start_screen.dart';
 
 class QuizWidget extends StatefulWidget {
@@ -16,7 +17,7 @@ class QuizWidget extends StatefulWidget {
 
 class _QuizWidgetState extends State<QuizWidget> {
   // we need to be able to switch from one screen to another
-  var activeScreen = 'start-screen';
+  var activeScreen = 'results-screen';
 
   var selectedAnswers = [];
 
@@ -32,7 +33,7 @@ class _QuizWidgetState extends State<QuizWidget> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = 'start-screen';
+        activeScreen = 'results-screen';
       });
     }
   }
@@ -50,8 +51,12 @@ class _QuizWidgetState extends State<QuizWidget> {
   Widget screenWidget = StartScreen(switchScreen);
 
   // using if conditions
-  if ( activeScreen == 'question-screen') screenWidget = QuestionsWidget(onSelectAnswer: onSelectAnswer);
-
+  if ( activeScreen == 'question-screen') {
+    screenWidget = QuestionsWidget(onSelectAnswer: onSelectAnswer);
+  }
+  else if (activeScreen == 'results-screen') {
+    screenWidget = const ResultScreen();
+  }
     return MaterialApp(
       home: Scaffold(
         body: Container(
