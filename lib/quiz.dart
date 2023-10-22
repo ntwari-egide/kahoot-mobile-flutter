@@ -17,9 +17,9 @@ class QuizWidget extends StatefulWidget {
 
 class _QuizWidgetState extends State<QuizWidget> {
   // we need to be able to switch from one screen to another
-  var activeScreen = 'results-screen';
+  var activeScreen = 'start-screen';
 
-  var selectedAnswers = [];
+  List<String> selectedAnswers = [];
 
   // executes on first time, as useEffect react
   // @override
@@ -55,7 +55,7 @@ class _QuizWidgetState extends State<QuizWidget> {
     screenWidget = QuestionsWidget(onSelectAnswer: onSelectAnswer);
   }
   else if (activeScreen == 'results-screen') {
-    screenWidget = const ResultScreen();
+    screenWidget = ResultScreen(results: selectedAnswers);
   }
     return MaterialApp(
       home: Scaffold(
