@@ -1,6 +1,7 @@
 // class for the quiz
 
 import 'package:flutter/material.dart';
+import 'package:quiz/data/questions.dart';
 import 'package:quiz/questions.dart';
 import 'package:quiz/start_screen.dart';
 
@@ -28,9 +29,16 @@ class _QuizWidgetState extends State<QuizWidget> {
 
   void onSelectAnswer (String answer) {
     selectedAnswers.add(answer);
+
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        activeScreen = 'start-screen';
+      });
+    }
   }
 
   void switchScreen() {
+
     setState(() {
       activeScreen = 'question-screen';
     });

@@ -25,8 +25,10 @@ class _QuestionsWidgetState extends State<QuestionsWidget> {
   //current question state
   var currentQuestionIndex = 0;
 
-  void onTapNext() {
-    print('writing ....');
+  //accessing content from the upper class
+
+  void onTapNext(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentQuestionIndex++;
     });
@@ -56,10 +58,12 @@ class _QuestionsWidgetState extends State<QuestionsWidget> {
             const SizedBox(
               height: 50,
             ),
-            ...question.getShuffledAnswers().map((answers) {
+            ...question.getShuffledAnswers().map((answer) {
               return Container(
                 margin: const EdgeInsets.only(top: 10),
-                child: AnswersWidget(answersText: answers, onTap: onTapNext),
+                child: AnswersWidget(answersText: answer, onTap: () {
+                  onTapNext(answer);
+                }),
               );
             }),
           ],
