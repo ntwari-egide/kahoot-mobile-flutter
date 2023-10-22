@@ -20,6 +20,7 @@ class ResultsBoard extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
+            backgroundColor: results[allQuestions.indexOf(currentQtn)] == currentQtn.answers[0] ? Colors.green : Colors.red ,
             child: Text((allQuestions.indexOf(currentQtn) + 1).toString()),
           ),
           const SizedBox(
