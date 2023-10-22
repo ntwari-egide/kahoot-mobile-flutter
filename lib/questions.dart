@@ -1,12 +1,19 @@
 // questionsWidget screen
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz/answers.dart';
 import 'package:quiz/data/questions.dart';
 import 'package:quiz/model/quiz_question.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsWidget extends StatefulWidget {
-  const QuestionsWidget({super.key});
+  const QuestionsWidget({
+    super.key,
+    required this.onSelectAnswer,
+  });
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuestionsWidget> createState() {
@@ -15,7 +22,6 @@ class QuestionsWidget extends StatefulWidget {
 }
 
 class _QuestionsWidgetState extends State<QuestionsWidget> {
-
   //current question state
   var currentQuestionIndex = 0;
 
@@ -28,7 +34,7 @@ class _QuestionsWidgetState extends State<QuestionsWidget> {
 
   @override
   Widget build(context) {
-   final question = questions[currentQuestionIndex];
+    final question = questions[currentQuestionIndex];
 
     return SizedBox(
       width: double.infinity,
@@ -40,10 +46,11 @@ class _QuestionsWidgetState extends State<QuestionsWidget> {
           children: [
             Text(
               question.question,
-              style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.sourceCodePro(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 244, 244, 255),
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(

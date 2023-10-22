@@ -17,12 +17,18 @@ class _QuizWidgetState extends State<QuizWidget> {
   // we need to be able to switch from one screen to another
   var activeScreen = 'start-screen';
 
+  var selectedAnswers = [];
+
   // executes on first time, as useEffect react
   // @override
   // void initState() {
   //   activeScreen = StartScreen(switchScreen);
   //   super.initState();
   // }
+
+  void onSelectAnswer (String answer) {
+    selectedAnswers.add(answer);
+  }
 
   void switchScreen() {
     setState(() {
@@ -36,7 +42,7 @@ class _QuizWidgetState extends State<QuizWidget> {
   Widget screenWidget = StartScreen(switchScreen);
 
   // using if conditions
-  if ( activeScreen == 'question-screen') screenWidget = const QuestionsWidget();
+  if ( activeScreen == 'question-screen') screenWidget = QuestionsWidget(onSelectAnswer: onSelectAnswer);
 
     return MaterialApp(
       home: Scaffold(
