@@ -41,7 +41,7 @@ class ResultsBoard extends StatelessWidget {
                 Text(
                   currentQtn.answers[0],
                   style: const TextStyle(
-                      fontSize: 15, color: Color.fromARGB(255, 255, 140, 238)),
+                      fontSize: 15, color: Color.fromARGB(255, 9, 226, 154)),
                   textAlign: TextAlign.start,
                 ),
                 const SizedBox(
@@ -49,7 +49,7 @@ class ResultsBoard extends StatelessWidget {
                 ),
                 Text(
                   results[allQuestions.indexOf(currentQtn)],
-                  style: const TextStyle(color: Color.fromARGB(255, 9, 226, 154)),
+                  style: const TextStyle(color: Color.fromRGBO(176, 255, 140, 1)),
                   textAlign: TextAlign.left,
                 )
               ],

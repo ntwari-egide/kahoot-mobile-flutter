@@ -4,10 +4,10 @@ class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz,{super.key});
 
 
-  final void Function() startQuiz;
+  final void Function(String newScreen) startQuiz;
 
   void handleStartQuiz () {
-    startQuiz();
+    startQuiz('question-screen');
   }
 
   @override

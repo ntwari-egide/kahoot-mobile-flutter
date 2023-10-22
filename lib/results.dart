@@ -6,10 +6,15 @@ import 'package:quiz/data/questions.dart';
 import 'package:quiz/results-board.dart';
 
 class ResultScreen extends StatelessWidget {
-  ResultScreen({super.key, required this.results});
+  ResultScreen({super.key, required this.results, required this.onChangeScreen});
 
   final List<String> results;
+  final void Function(String newScreen) onChangeScreen;
   var allQuestions = questions;
+
+  void retakeQuiz() {
+    onChangeScreen('question-screen');
+  }
 
   @override
   Widget build(context) {
@@ -49,7 +54,7 @@ class ResultScreen extends StatelessWidget {
               height: 30,
             ),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: retakeQuiz,
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.all(15),
                 foregroundColor: Colors.white,
