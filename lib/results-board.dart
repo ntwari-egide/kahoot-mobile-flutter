@@ -15,43 +15,47 @@ class ResultsBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          child: Text((allQuestions.indexOf(currentQtn) + 1).toString()),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        Flexible(
-          child: Column(
-            children: [
-              Text(
-                currentQtn.question,
-                style: const TextStyle(fontSize: 15, color: Colors.white),
-                textAlign: TextAlign.start,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                currentQtn.answers[0],
-                style: const TextStyle(
-                    fontSize: 15, color: Color.fromARGB(255, 255, 140, 238)),
-                textAlign: TextAlign.start,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                results[allQuestions.indexOf(currentQtn)],
-                style: const TextStyle(color: Color.fromARGB(255, 9, 226, 154)),
-                textAlign: TextAlign.left,
-              )
-            ],
+    return Container(
+      margin: const EdgeInsets.only(top: 10),
+      child: Row(
+        children: [
+          CircleAvatar(
+            child: Text((allQuestions.indexOf(currentQtn) + 1).toString()),
           ),
-        )
-      ],
+          const SizedBox(
+            width: 20,
+          ),
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  currentQtn.question,
+                  style: const TextStyle(fontSize: 15, color: Colors.white,),
+                  textAlign: TextAlign.start,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  currentQtn.answers[0],
+                  style: const TextStyle(
+                      fontSize: 15, color: Color.fromARGB(255, 255, 140, 238)),
+                  textAlign: TextAlign.start,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  results[allQuestions.indexOf(currentQtn)],
+                  style: const TextStyle(color: Color.fromARGB(255, 9, 226, 154)),
+                  textAlign: TextAlign.left,
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
