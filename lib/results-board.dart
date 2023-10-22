@@ -16,7 +16,7 @@ class ResultsBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 30),
       child: Row(
         children: [
           CircleAvatar(

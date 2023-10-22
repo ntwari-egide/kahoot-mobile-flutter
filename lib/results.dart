@@ -33,9 +33,18 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            ...allQuestions.map((question) {
-              return ResultsBoard(currentQtn: question, results: results);
-            }),
+            SizedBox(
+              height: 550,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ...allQuestions.map((question) {
+                      return ResultsBoard(currentQtn: question, results: results);
+                    }),
+                  ],
+                ),
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),
